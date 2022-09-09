@@ -1,28 +1,31 @@
 #include <stdio.h>
 /**
- * * main - entry point
- *  * Return: alway returns 0
+ * * main - entry point for program
+ *  * Return: 0
  **/
 int main(void)
 {
-	int i;
-	int j;
+	int a = '0';
+	int b;
 
-	for (i = 10; i <= 19; i++)
+	while (a <= '9')
 	{
-		for (j = 10; j <= 19; j++)
+		b = a + 1;
+		while (b <= '9')
 		{
-			if ((j % 10) > (i % 10))
+			putchar(a);
+			putchar(b);
+			if (a == '8' && b == '9')
 			{
-				putchar((i % 10) + '0');
-				putchar((j % 10) + '0');
-				if (i != 18 || j != 19)
-				putchar(',');
-				putchar(' ');
+				putchar('\n');
 			}
-		}
+			else
+			{
+				putchar(',');
+				putchar(' ');																}
+			b++;
+		} a++;
 	}
+	return (0);
 }
-putchar('\n');
-return (0);
-}
+
