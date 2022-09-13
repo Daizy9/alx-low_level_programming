@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * main - print putchar
+ * Description: print _putchar
+ * Return: 0 (Sucess)
+ **/
 int main(void)
 {
 	_putchar('_');
