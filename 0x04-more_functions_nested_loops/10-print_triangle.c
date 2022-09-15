@@ -18,6 +18,6 @@ void print_triangle(int size)
 			else
 				_putchar('#');
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
