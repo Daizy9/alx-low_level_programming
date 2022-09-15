@@ -5,9 +5,12 @@
  **/
 void print_numbers(void)
 {
-	char i;
+	int i;
 
-	for (i = '0'; i <= '9'; i++)
-		_putchar(i);
+	while (i >= 48 && i <= 57)
+	{
+		_putchar('i');
+		i++;
+	}
 	_putchar('\n');
 }
