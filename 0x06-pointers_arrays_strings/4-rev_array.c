@@ -1,12 +1,11 @@
 #include "main.h"
-
 #include <stdio.h>
 /**
  * * reverse_array - reverses an array
  * * @a: array to reverse
  * * @n: size of array
  **/
-void print_array(int *a, int n)
+void reverse_array(int *a, int n)
 {
 	int i;
 	int t;
