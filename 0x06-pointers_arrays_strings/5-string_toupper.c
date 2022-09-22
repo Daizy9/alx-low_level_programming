@@ -1,13 +1,18 @@
 #include "main.h"
 #include<stdio.h>
 #include<string.h>
-
-char *string_toupper(char *);
+/**
+ * * string_toupper - uppers a lower
+ * * @s: character to make upper
+ * * Return: return value of upper
+ **/
+char *string_toupper(char *str)
 {
 	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-		if (s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
-	return (s);
+	for (i = 0; *str != ''; i++)
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] -= 32;
+	}
+	return (str);
 }
