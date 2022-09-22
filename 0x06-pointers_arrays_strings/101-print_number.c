@@ -5,10 +5,13 @@
  **/
 void print_number(int n)
 {
-	int a;
+	unsigned int i = n;
 
-	_putchar("Enter an integer\n");
-	scanf("%d", &a);
-	_putchar("The integer is: %d\n", a);
-	return (0);
+	if (n < 0)
+		putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+		print(n / 10);
+	putchar(n % 10 + '0');
 }
