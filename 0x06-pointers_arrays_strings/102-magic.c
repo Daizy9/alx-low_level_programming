@@ -1,9 +1,4 @@
 #include <stdio.h>
-/*
- * * main - entry point
- * * Description: Add one line to this code, so that the program prints
- * * return 0 (Always)
- */
 
 int main(void)
 {
