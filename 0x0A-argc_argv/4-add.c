@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * * main - Prints the multiplication of two numbers, followed by a new line.
- * * @argc: The number of arguments supplied to the program.
- * * @argv: An array of pointers to the arguments
- * * Return: If the program receives two arguments - 0.
- * *If the program does not receive two arguments - 1.
+ * * main - Prints the addition of positive numbers,
+ * *followed by a new line.
+ * * @argc: The number of arguments passed to the program.
+ * * @argv: An array of pointers to the arguments.
+ * * Return: If one of the numbers contains symbols that are non-digits - 1.
+ * *Otherwise - 0.
  **/
-int main()
+int main(int argc, char *argv[])
 {
-	int n,i,num,sum=0;
+	int num, digit, sum = 0;
 
-	printf("Enter number of numbers to sum:");
-	scanf("%d",&n);
-	i=0;
-	printf("Enter %d numbers to sum:",n);
-	while(i<n)
+	for (num = 1; num < argc; num++)
+	{
+		for (digit = 0; argv[num][digit]; digit++)
+		{
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
 			{
-				scanf("%d",&num);
-				if(num>=0)
-				{
-					sum=sum+num;
-				}
-				i++;
+				printf("Error\n");
+				return (1);
 			}
-	printf("The Sum is: %d",sum);
-	return 0;
+		}
+		sum += atoi(argv[num]);
+}
+printf("%d\n", sum);
+return (0);
 }
