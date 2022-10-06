@@ -2,14 +2,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * * main - entry point
- * * argstostr - Concatenates all arguments of the program into a string;
- * * arguments are separated by a new line in the string.
- * * @ac: The number of arguments passed to the program.
- * * @av: An array of pointers to the arguments.
- * * Return: If ac == 0, av == NULL, or the function fails - NULL.
- * * Otherwise - a pointer to the new string.
+ * argstostr - concatenate all arguments of your program with newline
+ * @ac: argument count
+ * @av: double pointer to array of strings passed to main
+ * Return: Null if fail, else return pointer to new string
  */
+
 char *argstostr(int ac, char **av)
 {
 	char *a, *retp;
@@ -17,6 +15,7 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
+
 	for (i = 0, total = 0; i < ac; i++)
 	{
 		for (j = 0; *(*(av + i) + j) != '\0'; j++, total++)
@@ -24,9 +23,11 @@ char *argstostr(int ac, char **av)
 		total++;
 	}
 	total++;
+
 	a = malloc(total * sizeof(char));
 	if (a == NULL)
 		return (NULL);
+
 	retp = a;
 	for (i = 0; i < ac; i++)
 	{
@@ -38,5 +39,6 @@ char *argstostr(int ac, char **av)
 		*a = '\n';
 		a++;
 	}
+
 	return (retp);
 }
