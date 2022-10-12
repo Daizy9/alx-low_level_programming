@@ -1,38 +1,31 @@
-/**
- * * File: 3-get_op_func.c
- * * Auth: Brennan D Baraban
- **/
-#include "3-calc.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include "3-calc.h"
 /**
- * * get_op_func - Selects the correct function to perform
- * * the operation asked by the user
- * * @s: The operator passed as argument.
- * * Return: A pointer to the function corresponding
- * * to the operator given as a parameter.
+ * * main - main function
+ * * @argc: arguments
+ * * @argv: array of args
+ * * Return: return something
  **/
-int (*get_op_func(char *s))(int, int)
+int main(int argc, char *argv[])
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-	{"%", op_mod},
-															{NULL, NULL}
+	if (argc == 4)
+	{
+		int a;
+		int b;
+		int (*func)(int, int);
 
-						};
-
-			int i = 0;
-
-
-
-				while (ops[i].op != NULL && *(ops[i].op) != *s)
-
-							i++;
-
-
-
-					return (ops[i].f);
-
+		a = atoi(argv[1]);
+		b = atoi(argv[3]);
+		func = get_op_func(argv[2]);
+		if ((*argv[2] == '%' || *argv[2] == '/') && b == 0)
+		{
+			printf("Error\n");
+			exit(100);
+		}
+		printf("%d\n", func(a, b));
+		return (0);
+	}
+	printf("Error\n");
+	exit(98);
 }
