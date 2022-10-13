@@ -7,23 +7,19 @@
  * * @separator: seperator char
  * * @n: number of args
  **/
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i;
-	va_list stringArgs;
+	va_list nums;
+	unsigned int index;
 	char *strArg;
 
-	va_start(stringArgs, n);
-	for (i = 0; i < n; i++)
+	va_start(nums, n);
+	for (index = 0; index < n; index++)
 	{
-		strArg = va_arg(stringArgs, char *);
-		if (separator != NULL && i > 0)
+		printf("%d", va_arg(nums, int));
+		if (index != (n - 1) && separator != NULL)
 			printf("%s", separator);
-				if (strArg == NULL)
-					printf("(nil)");
-				else
-					printf("%s", strArg);
 	}
-	va_end(stringArgs);
 	printf("\n");
+	va_end(nums);
 }
